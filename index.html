@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>タスク管理</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4285f4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>タスク管理</h1>
+        </header>
+        
+        <div class="add-task-section">
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="新しいタスクを入力..." autocomplete="off">
+                <button id="addButton" aria-label="タスクを追加">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">すべて</button>
+            <button class="filter-btn" data-filter="active">未完了</button>
+            <button class="filter-btn" data-filter="completed">完了</button>
+        </div>
+        
+        <div class="task-stats">
+            <span id="taskCount">0件のタスク</span>
+        </div>
+        
+        <ul id="taskList" class="task-list"></ul>
+        
+        <div class="empty-state" id="emptyState">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 11l3 3 8-8" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8c1.334 0 2.591.327 3.695.906" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <p>タスクがありません</p>
+            <p class="empty-state-hint">上のフォームから新しいタスクを追加してください</p>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
